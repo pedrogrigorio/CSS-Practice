@@ -1,0 +1,179 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  background-color: #873B2B;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.book {
+  position: relative;
+  height: 400px;
+  width: 270px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+
+
+/* Cover */
+
+.cover {
+  position: absolute;
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+
+  background: linear-gradient(to right, #1B8AF5 0 15px,  rgba(4,108,211,0.7) 15px,rgb(33, 148, 255) 30px, #1B8AF5 30px);
+  perspective: 1000px;
+  z-index: 10;
+  transform-origin: left center;
+  /* display: none; */
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  right: 0;
+  transform-origin: right;
+  transform: rotateY(45deg) translate(100%);
+  background-color: rgba(0,105,205);
+  /* background: linear-gradient(to right, rgb(35,154,247) 0 50%, rgba(0,105,205) 50% 100%); */
+}
+
+.book:hover .cover {
+  transform: rotateY(-34deg);
+  /* transform: rotateY(-180deg); */
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(100px); */
+}
+
+
+
+/* Pages */
+
+.pages {
+  position: absolute;
+  top: 1%;
+  height: 98%;
+  width: 97.5%;
+  transform-style: preserve-3d;
+  transform: translateZ(-10px);
+}
+
+.pages > li {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  box-shadow: inset 0px -1px 2px rgba(50, 50, 50, 0.4), 
+    inset -1px 0px 1px rgba(150, 150, 150, 0.8);
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  transition: .3s;
+}
+
+.book:hover .pages li:nth-child(1) {
+  transform: rotateY(-26deg);
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(30px); */
+}
+
+.book:hover .pages li:nth-child(2) {
+  transform: rotateY(-24deg);
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(30px); */
+}
+
+.book:hover .pages li:nth-child(3) {
+  transform: rotateY(-22deg);
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(30px); */
+}
+
+.book:hover .pages li:nth-child(4) {
+  transform: rotateY(-20deg);
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(30px); */
+}
+
+.book:hover .pages li:nth-child(5) {
+  transform: rotateY(-18deg);
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(30px); */
+}
+
+.book:hover .pages li:nth-child(6) {
+  transform: rotateY(-16deg);
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(30px); */
+}
+
+.book:hover .pages li:nth-child(7) {
+  transform: rotateY(-14deg);
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(30px); */
+}
+
+.book:hover .pages li:nth-child(8) {
+  transform: rotateY(-12deg);
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(30px); */
+}
+
+/* Back cover */
+
+
+.back-cover {
+  position: absolute;
+  transform-style: preserve-3d;
+  height: 100%;
+  width: 100%;
+
+  /* background-color: #1B8AF5; */
+  background: linear-gradient(to right, #1B8AF5 0 15px,  rgba(4,108,211,0.7) 15px,rgb(33, 148, 255) 30px, #1B8AF5 30px);
+  perspective: 1000px;
+  z-index: 0;
+  transform-origin: left center;
+  /* display: none; */
+}
+
+.back-cover::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 100%;
+  right: 0;
+  transform-origin: right;
+  transform: rotateY(45deg) translate(100%);
+  background-color: rgba(0,105,205);
+  /* background: linear-gradient(to right, rgb(35,154,247) 0 50%, rgba(0,105,205) 50% 100%); */
+}
+
+.book:hover .back-cover {
+  transform: rotateY(0deg);
+  transition: .3s;
+  /* transform: rotateY(-30deg) translateZ(100px); */
+}
+
+.cover,
+.pages,
+.back-cover {
+  transition-duration: .3s;
+}
