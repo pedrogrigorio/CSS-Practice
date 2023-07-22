@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="box" id="box">
+      Hi
+    </div>
+
+    <button id="button">Reveal</button>
+
+  </div>
+
+  <script>
+    const boxElement = document.getElementById('box');
+    const buttonElement = document.getElementById('button');
+
+    buttonElement.addEventListener('click', function() {
+      boxElement.classList.add('active');
+    });
+  </script>
+</body>
+</html>
