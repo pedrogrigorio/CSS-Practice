@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 72px;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #161616;
+}
+
+.text-reveal {
+  color: transparent;
+  -webkit-text-stroke: 1px #5E8FD8;
+  position: relative;
+}
+
+.text-reveal::before {
+  content: "Software Developer";
+  position: absolute;
+  white-space: nowrap;
+  width: 0%;
+  height: 100%;
+  overflow: hidden;
+  color: #5E8FD8;
+  border-right: 8px solid #5E8FD8;
+  animation: slidein 5s ease-in-out infinite;
+}
+
+@keyframes slidein {
+  0%, 100% {
+    width: 0%;
+    filter: drop-shadow(0 0 20px #5E8FD8);
+  }
+  50% {
+    width: 101%;
+  }
+}
